@@ -14,12 +14,10 @@ router.post('/', async (req, res) => {
                 email, name, username, bio: "hello I'm new on Twitter"
             }
         })
-
         res.json(result)
     } catch (e) {
         res.status(400).json({error: "Username and email should be unique"})
     }
-
 })
 router.get('/', async (req, res) => {
     const allUser = await prisma.user.findMany()
@@ -29,7 +27,9 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
     const {id} = req.params
     const user = await prisma.user.findUnique({where: {id: Number(id)}})
-
+    if (!user) {
+        return res.status(404).json({error:"User not found"})
+    }
     res.json(user)
 })
 router.put('/:id', async (req, res) => {
