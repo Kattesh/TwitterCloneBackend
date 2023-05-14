@@ -1,18 +1,22 @@
 import {Router} from 'express'
 import {PrismaClient} from "@prisma/client";
+import jwt from "jsonwebtoken";
+
 
 const router = Router()
 const prisma = new PrismaClient();
 //Tweet
 router.post('/', async (req, res) => {
-    const {content, image, userId} = req.body
+    const {content, image} = req.body
+    //@ts-ignore
+    const user = req.user
 
     try {
         const result = await prisma.tweet.create({
             data: {
                 content,
                 image,
-                userId
+                userId: user.id
             }
         })
         res.json(result)
@@ -37,7 +41,10 @@ router.get('/', async (req, res) => {
 })
 router.get('/:id', async (req, res) => {
     const {id} = req.params
-    const tweet = await prisma.tweet.findUnique({where: {id: Number(id)}})
+    const tweet = await prisma.tweet.findUnique({
+        where: {id: Number(id)},
+        include: {user: true}
+    })
     if (!tweet) {
         return res.status(404).json({error: "Tweet not found"})
     }
