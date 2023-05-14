@@ -26,6 +26,46 @@
           <option name="requests">
             <list>
               <requestState>
+                <option name="body">
+                  <bodyState>
+                    <option name="raw" value="{&#10;  &quot;email&quot;: &quot;kate.sh@icloud.com&quot;&#10;}" />
+                    <option name="type" value="JSON" />
+                  </bodyState>
+                </option>
+                <option name="headers">
+                  <list>
+                    <headerState>
+                      <option name="key" value="Content-Type" />
+                      <option name="value" value="application/json" />
+                    </headerState>
+                  </list>
+                </option>
+                <option name="id" value="cd5c9a1f-d6fc-4cb7-9fb2-4d99fdf9ad66" />
+                <option name="method" value="POST" />
+                <option name="name" value="login" />
+                <option name="url" value="{{baseUrl}}/auth/login" />
+              </requestState>
+              <requestState>
+                <option name="body">
+                  <bodyState>
+                    <option name="raw" value="{&#10;  &quot;email&quot;: &quot;kate.sh@icloud.com&quot;,&#10;  &quot;emailToken&quot;: &quot;12381318&quot;&#10;}" />
+                    <option name="type" value="JSON" />
+                  </bodyState>
+                </option>
+                <option name="headers">
+                  <list>
+                    <headerState>
+                      <option name="key" value="Content-Type" />
+                      <option name="value" value="application/json" />
+                    </headerState>
+                  </list>
+                </option>
+                <option name="id" value="fd4e2ccc-1032-4fe0-bb3e-bd42d83d366a" />
+                <option name="method" value="POST" />
+                <option name="name" value="authenticate" />
+                <option name="url" value="{{baseUrl}}/auth/authenticate" />
+              </requestState>
+              <requestState>
                 <option name="id" value="a8008b8b-05f3-4b03-987f-611e1ec8fe29" />
                 <option name="method" value="GET" />
                 <option name="name" value="get user " />
@@ -136,46 +176,6 @@
                 <option name="method" value="DELETE" />
                 <option name="name" value="delete tweet" />
                 <option name="url" value="{{baseUrl}}/tweet/3" />
-              </requestState>
-              <requestState>
-                <option name="body">
-                  <bodyState>
-                    <option name="raw" value="{&#10;  &quot;email&quot;: &quot;kate.sh@icloud.com&quot;&#10;}" />
-                    <option name="type" value="JSON" />
-                  </bodyState>
-                </option>
-                <option name="headers">
-                  <list>
-                    <headerState>
-                      <option name="key" value="Content-Type" />
-                      <option name="value" value="application/json" />
-                    </headerState>
-                  </list>
-                </option>
-                <option name="id" value="cd5c9a1f-d6fc-4cb7-9fb2-4d99fdf9ad66" />
-                <option name="method" value="POST" />
-                <option name="name" value="login" />
-                <option name="url" value="{{baseUrl}}/auth/login" />
-              </requestState>
-              <requestState>
-                <option name="body">
-                  <bodyState>
-                    <option name="raw" value="{&#10;  &quot;email&quot;: &quot;kate.sh@icloud.com&quot;,&#10;  &quot;emailToken&quot;: &quot;12381318&quot;&#10;}" />
-                    <option name="type" value="JSON" />
-                  </bodyState>
-                </option>
-                <option name="headers">
-                  <list>
-                    <headerState>
-                      <option name="key" value="Content-Type" />
-                      <option name="value" value="application/json" />
-                    </headerState>
-                  </list>
-                </option>
-                <option name="id" value="fd4e2ccc-1032-4fe0-bb3e-bd42d83d366a" />
-                <option name="method" value="POST" />
-                <option name="name" value="authenticate" />
-                <option name="url" value="{{baseUrl}}/auth/authenticate" />
               </requestState>
             </list>
           </option>
